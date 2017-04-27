@@ -1,0 +1,13 @@
+build:
+  script:
+    - apt-get update -y
+    - apt-get install curl -y
+    - echo "triggering build of master project"
+    - curl
+      -X POST
+      -F token=e8804ba3a3d63eea4de35a5e12c5fe
+      -F ref=master
+      -F "variables[SLAVE_REPOSITORY]=$CI_PROJECT_URL"
+      https://gitlab.igg.uni-bonn.de/api/v4/projects/148/trigger/pipeline
+  tags:
+    - docker
