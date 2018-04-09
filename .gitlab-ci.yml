@@ -10,6 +10,7 @@ build:
       -F token=e8804ba3a3d63eea4de35a5e12c5fe
       -F ref=master
       -F "variables[SLAVE_REPOSITORY]=$CI_PROJECT_URL"
+      -F "variables[SOLUTIONS_SCRIPT]=/solutions/2018/homeworks.yml"
       https://gitlab.igg.uni-bonn.de/api/v4/projects/148/trigger/pipeline
   tags:
     - docker
