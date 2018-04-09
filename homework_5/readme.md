@@ -5,7 +5,7 @@ Generally the stucture is divided into exercises, e.g.:
 
 ```
 homework_folder/
-  |- exercise_1/
-  |- exericse_2/
+  |- task_1/
+  |- task_2/
   |- ...
 ```

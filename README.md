@@ -8,12 +8,12 @@ The structure should be like this:
 
 ```
 homework_1/
-  |- exercise_1/
-  |- exericse_2/
+  |- task_1/
+  |- task_2/
   |- ...
 homework_2/
-  |- exercise_1/
-  |- exericse_2/
+  |- task_1/
+  |- task_2/
   |- ...
 ...
 ```
