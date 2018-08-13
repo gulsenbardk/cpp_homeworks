@@ -7,7 +7,7 @@ build:
     - echo "triggering build of master project"
     - curl
       -X POST
-      -F token=e8804ba3a3d63eea4de35a5e12c5fe
+      -F token=cf78ed3dcaed0529d5ffbfde4615ee
       -F ref=master
       -F "variables[SLAVE_REPOSITORY]=$CI_PROJECT_URL"
       -F "variables[SOLUTIONS_SCRIPT]=/solutions/2018/homeworks.yml"
