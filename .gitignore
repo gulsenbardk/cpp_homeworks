@@ -2,7 +2,12 @@
 !/**/
 !*.*
 
+###Build Artifacts and Results###
 */build/
+*/results/
+
+###Visual Studio Code###
+*.vscode
 
 ###SublimeText###
 
