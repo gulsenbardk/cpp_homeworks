@@ -3,8 +3,8 @@
 !*.*
 
 ###Build Artifacts and Results###
-*/build/
-*/results/
+**/build/
+**/results/
 
 ###Visual Studio Code###
 *.vscode
