@@ -1,10 +1,8 @@
 # DO NOT TOUCH THIS FILE!
 # ANY CHANGES MAY BREAK HOMEWORK CHECKING
+image: curlimages/curl
 build:
   script:
-    - apt-get update -y
-    - apt-get install curl -y
-    - echo "triggering build of master project"
     - curl
       -X POST
       -F token=cf78ed3dcaed0529d5ffbfde4615ee
