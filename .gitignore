@@ -1,8 +1,12 @@
 ### Build Artifacts and Results ###
 **/*build/
+**/*bin/
 **/*results/
 **/*.zip
 **/*.tar
+**/*.bin
+**/*.png
+**/*.cache/
 
 # Created by https://www.gitignore.io/api/c,vim,c++,code,cmake,opencv,sublimetext
 # Edit at https://www.gitignore.io/?templates=c,vim,c++,code,cmake,opencv,sublimetext
