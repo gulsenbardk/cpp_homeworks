@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.24)
+project(task_2)
+include_directories(./include)
+add_library(ipb_arithmetic ./src/subtract.cpp ./src/sum.cpp)
+add_executable(test_ipb_arithmetic ./src/main.cpp)
+target_link_libraries(test_ipb_arithmetic ipb_arithmetic) 
