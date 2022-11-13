@@ -1,4 +1,4 @@
-rules: rule_1 rule_2 rule_3 rule_4 rule_5 rule_6 rule_7 rule_8 rule_9 rule_10
+rules: rule_1 rule_2 rule_3 rule_4 rule_5 rule_6 rule_7 rule_8 rule_10 rule_9
 rule_1 :
 	mkdir -p build 
 rule_2:
@@ -19,4 +19,6 @@ rule_9:
 	c++ -std=c++17 build/main.o -L build/ -lipb_arithmetic -o build/test_ipb_arithmetic
 rule_10:
 	c++ -std=c++17 build/main.o -L results/lib/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic
+rule_10_1: 
+	chmod +x test_ipb_arithmetic
 	
