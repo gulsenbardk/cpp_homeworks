@@ -8,4 +8,5 @@ ar rcs libipb_arithmetic.a sum.o subtract.o
 cp libipb_arithmetic.a ../results/lib
 cd ..
 c++ -std=c++17 -c -I include/ src/main.cpp -o build/test_ipb_arithmetic
+
 c++ -std=c++17 build/main.o -L build/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic
