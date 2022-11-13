@@ -9,6 +9,5 @@ include_directories(include/)
 add_library(ipb_arithmetic ./src/subtract.cpp ./src/sum.cpp)
 add_executable(test_ipb_arithmetic ./src/main.cpp)
 target_link_libraries(test_ipb_arithmetic ipb_arithmetic) 
-
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include DESTINATION ${CMAKE_INSTALL_PREFIX})
 install(TARGETS ipb_arithmetic DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
