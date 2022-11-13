@@ -1,4 +1,5 @@
-all:main.o sum.o subtract.o
-        gcc –o test_ipb_arithmetic main.o sum.o subtract.o
-clean:
-        $(RM) test_ipb_arithmetic
+rules: rule_1 rule_2
+rule_1: 
+	c++ -std=c++17 -c -I include/ src/main.cpp -o build/main.o
+rule_2:
+	c++ -std=c++17 build/main.o -L results/lib/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic
