@@ -10,3 +10,6 @@ mkdir -p results/bin
 mkdir -p results/lib
 cp build/libipb_arithmetic.a ./results/lib
 
+c++ -std=c++17 -c -I include/  src/main.cpp -o build/main.o
+c++ -std=c++17 build/main.o -L build/ -lipb_arithmetic -o build/test_ipb_arithmetic
+c++ -std=c++17 build/main.o -L results/lib/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic

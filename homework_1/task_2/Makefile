@@ -19,6 +19,5 @@ rule_9:
 	c++ -std=c++17 build/main.o -L build/ -lipb_arithmetic -o build/test_ipb_arithmetic
 rule_10:
 	c++ -std=c++17 build/main.o -L results/lib/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic
-rule_10_1: 
-	chmod +x test_ipb_arithmetic
+
 	
