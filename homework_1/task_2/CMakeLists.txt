@@ -14,4 +14,6 @@ install(FILES include/ipb_arithmetic/subtract.hpp DESTINATION ../install/include
 install(FILES include/ipb_arithmetic/sum.hpp DESTINATION ../install/include/ipb_arithmetic)
 install(FILES build/libipb_arithmetic.a DESTINATION ../install/lib)
 install(FILES build/libipb_arithmetic.a DESTINATION ../results/lib)
-install(FILES build/test_ipb_arithmetic DESTINATION ../results/bin)
+install(FILES build/test_ipb_arithmetic 
+        PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+        DESTINATION ../results/bin)
