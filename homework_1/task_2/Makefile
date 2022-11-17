@@ -1,23 +1,37 @@
-rules: rule_1 rule_2 rule_3 rule_4 rule_5 rule_6 rule_7 rule_8 rule_10 rule_9
-rule_1 :
+rules: directoryBuild libraryArithmetic compileBuild directoryResults libraryResultsLibArithmetic linkMain copyBuild compileResult
+
+directoryBuild :
 	mkdir -p build 
-rule_2:
-	c++ -c  -I./include/ src/subtract.cpp -o build/subtract.o
-rule_3:
-	c++ -c  -I./include/ src/sum.cpp -o build/sum.o
-rule_4:
+
+libraryArithmetic: buildSubtract buildSum
 	ar rcs build/libipb_arithmetic.a build/sum.o build/subtract.o
-rule_5: 
+
+buildSubtract: 
+	c++ -c  -I./include/ src/subtract.cpp -o build/subtract.o
+
+buildSum:
+	c++ -c  -I./include/ src/sum.cpp -o build/sum.o 
+
+compileBuild: 
 	c++ -std=c++17 -c -I include/ src/main.cpp -o build/main.o
-rule_6:
+
+directoryResults: directoryBin directoryLib
+	mkdir -p results
+directoryBin:
 	mkdir -p results/bin
-rule_7:
+directoryLib:
 	mkdir -p results/lib
-rule_8:
+
+libraryResultsLibArithmetic:
 	ar rcs results/lib/libipb_arithmetic.a build/sum.o build/subtract.o
-rule_9:
+
+linkMain:
 	c++ -std=c++17 build/main.o -L build/ -lipb_arithmetic -o build/test_ipb_arithmetic
-rule_10:
+
+copyBuild:
+	cp build/libipb_arithmetic.a results/lib
+
+compileResult:
 	c++ -std=c++17 build/main.o -L results/lib/ -lipb_arithmetic -o results/bin/test_ipb_arithmetic
 
 	
