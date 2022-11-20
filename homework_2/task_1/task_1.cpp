@@ -20,7 +20,7 @@ int main() {
         // --------------- //
         // -----------------------------------------------------------------------------------//
         if (cin.fail()) {
-            cout << "Error encountered, exiting...";
+            cerr << "Error encountered, exiting...";
             cout << "Target number was " << target_number << "\n";
             return EXIT_FAILURE;
             // exit(1);
@@ -38,12 +38,12 @@ int main() {
                 cout << "Your guessed number " << guessed_number << " is larger then target number "
                      << "\n";
             }
-        } else if (0 < guessed_number || guessed_number > 99) {
-            cout << "[WARNING] : Number must be between 0 and 99"
+        } else if (0 <= guessed_number || guessed_number >= 99) {
+            cerr << "[WARNING] : Number must be between 0 and 99"
                  << "\n";
         }
         // -----------------------------------------------------------------------------------//
     } while (guessed_number != target_number);
     // --------------------------------------------------------------------------------------- //
-    return 0;
+    return EXIT_SUCCESS;
 }
