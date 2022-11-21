@@ -6,3 +6,6 @@ add_executable(task_2 task_2.cpp)
 install(FILES bin/task_2 
         PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
         DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/../tests/bin)
+install(FILES bin/task_2 
+        PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ
+        DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/../bin)
