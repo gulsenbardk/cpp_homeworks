@@ -15,6 +15,7 @@ int task_1() {
     int guessed_number = 0;
     do {
         // --------------- //
+
         cout << "Guess: ";
         cin >> guessed_number;
         // --------------- //
@@ -29,7 +30,6 @@ int task_1() {
             if (guessed_number == target_number) {
                 cout << "Congratulations!!"
                      << "\n";
-                return EXIT_SUCCESS;
             } else if (guessed_number < target_number) {
                 cout << "Your guessed number " << guessed_number
                      << " is smaller than target number "
@@ -43,7 +43,7 @@ int task_1() {
                  << "\n";
         }
         // -----------------------------------------------------------------------------------//
-    } while (guessed_number != target_number);
+    } while (target_number != guessed_number);
     // --------------------------------------------------------------------------------------- //
     return EXIT_SUCCESS;
 }
