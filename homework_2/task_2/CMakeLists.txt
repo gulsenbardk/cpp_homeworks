@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.16.3)
 project(task_2)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_INSTALL_PREFIX ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 add_executable(task_2 task_2.cpp)
 install(FILES bin/task_2 
