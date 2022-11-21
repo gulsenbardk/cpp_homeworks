@@ -38,7 +38,7 @@ int task_1() {
                 cout << "Your guessed number " << guessed_number << " is larger then target number "
                      << "\n";
             }
-        } else if (0 <= guessed_number || guessed_number >= 99) {
+        } else if (0 > guessed_number || guessed_number > 99) {
             cerr << "[WARNING] : Number must be between 0 and 99"
                  << "\n";
         }
