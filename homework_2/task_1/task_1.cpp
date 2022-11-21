@@ -21,8 +21,8 @@ int main() {
             cerr << "Error encountered, exiting..." << endl << target_number << endl;
             return EXIT_FAILURE;
         }
-        if ((target_number <= 0) || (target_number >= 99)) {
-            cerr << "[WARNING] : Number must be between 0 and 99" << endl << target_number << endl;
+        if ((target_number < 0) || (target_number > 99)) {
+            cerr << "[WARNING] : Number must be between 0 and 99" << endl;
         } else if (guessed_number < target_number) {
             cout << "Your guessed number is smaller than target number"
                     "target number "
