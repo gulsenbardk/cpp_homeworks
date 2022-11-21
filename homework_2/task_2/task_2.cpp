@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     string fn_1 = filename_1.substr(0, lastindex_1);
     string ex1 = filename_1.substr(lastindex_1 + 1);
     stringstream s1i(filename_1);*/
-    int fn1;
+    int fn1 = 0;
     string ex1;
     filename_1 >> fn1 >> ex1;
 
@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     string fn_2 = filename_2.substr(0, lastindex_2);
     string ex2 = filename_2.substr(lastindex_2 + 1);
     stringstream s2i(filename_2);*/
-    int fn2;
+    int fn2 = 0;
     string ex2;
     filename_2 >> fn2 >> ex2;
 

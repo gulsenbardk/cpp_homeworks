@@ -6,13 +6,13 @@ using namespace std;
 int task_1() {
     // ------------------------------------------------- //
     random_device device;
-    int target_number;
+    int target_number = 0;
     mt19937 generator(device());
     uniform_int_distribution<int> distribution(0, 99);
     target_number = distribution(generator);
     // ------------------------------------------------- //
     // --------------------------------------------------------------------------------------- //
-    int guessed_number;
+    int guessed_number = 0;
     do {
         // --------------- //
         cout << "Guess: ";
