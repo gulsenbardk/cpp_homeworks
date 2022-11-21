@@ -3,7 +3,7 @@
 #include <random>
 using namespace std;
 
-int task_1() {
+int main() {
     // ------------------------------------------------- //
     random_device device;
     int target_number = 0;
