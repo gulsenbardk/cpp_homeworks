@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.16.3)
+project(task_2)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build)
+add_library(tasks ./task_1/task_1.cpp ./task_2/task_2.cpp)
+#add_executable(task_2 ./task_2/task_2.cpp)
