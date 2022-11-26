@@ -1,7 +1,4 @@
-#ifndef HOMEWORK_3_HPP_
-#define HOMEWORK_3_HPP_
+#pragma once
 
 #include "html_writer.hpp"
 #include "image_browser.hpp"
-
-#endif

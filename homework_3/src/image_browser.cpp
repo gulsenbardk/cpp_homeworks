@@ -1,17 +1,20 @@
+
 #include <iostream>
 #include <tuple>
 
-#include "homework_3.h"
-using namespace html_writer;
+#include "../api/homework_3.h"
+// using namespace html_writer;
 
 namespace image_browser {
 
 void AddFullRow(const ImageRow &row, bool first_row) {
-    OpenRow();
+    html_writer::OpenRow();
     bool hl = false;  // default
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         if (i == 0) {
-            hl = true;
+            hl = first_row;
+        } else {
+            hl = false;
         }
         html_writer::AddImage(std::get<0>(row[i]), std::get<1>(row[i]), hl);
     }

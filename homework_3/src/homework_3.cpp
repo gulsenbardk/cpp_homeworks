@@ -1,4 +1,4 @@
-#include "homework_3.h"
+#include "../api/homework_3.h"
 
 #include <iostream>
 
@@ -10,6 +10,7 @@ int main() {
     const image_browser::ScoredImage img3{"data/000200.png", 0.88};
     const image_browser::ScoredImage img4{"data/000300.png", 0.87};
     const image_browser::ScoredImage img5{"data/000400.png", 0.80};
+
     const image_browser::ScoredImage img6{"data/000500.png", 0.79};
     const image_browser::ScoredImage img7{"data/000600.png", 0.76};
     const image_browser::ScoredImage img8{"data/000700.png", 0.75};
