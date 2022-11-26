@@ -29,8 +29,8 @@ void CreateImageBrowser(const std::string &title,
     html_writer::AddTitle(title);
     html_writer::AddCSSStyle(stylesheet);
     html_writer::OpenBody();
-
-    for (int i = 0; i <= rows.size() - 1; i++) {
+    int row_size = rows.size();
+    for (int i = 0; i <= row_size - 1; i++) {
         if (i == 0) {
             AddFullRow(rows.at(0), true);
         } else {
