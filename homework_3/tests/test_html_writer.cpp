@@ -9,7 +9,7 @@
 
 #include <string>
 
-#include "../api/homework_3.h"
+#include "homework_3.hpp"
 
 using ::testing::HasSubstr;
 using ::testing::Not;
