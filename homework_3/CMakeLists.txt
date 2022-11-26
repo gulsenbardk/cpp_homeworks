@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.16.3)
 project(homework_3)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/build) 
 #set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build)
 #set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/build)
-#add_subdirectory(./tests)
+add_subdirectory(./tests)
 
 
 include_directories(api/)
