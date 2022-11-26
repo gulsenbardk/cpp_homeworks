@@ -5,7 +5,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "../api/homework_3.hpp"
+#include "../api/homework_3.h"
 
 using namespace std;
 

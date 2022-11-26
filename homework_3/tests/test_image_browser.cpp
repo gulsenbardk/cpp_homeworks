@@ -11,7 +11,7 @@
 #include <sstream>
 #include <string>
 
-#include "homework_3.hpp"
+#include "homework_3.h"
 #include "trim.hpp"
 
 using ::testing::HasSubstr;
