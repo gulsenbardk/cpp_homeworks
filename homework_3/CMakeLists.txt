@@ -16,9 +16,9 @@ target_link_libraries(image_browser PUBLIC html_writer)
 add_executable(create_image_browser ./api/homework_3.cpp)
 target_link_libraries(create_image_browser PUBLIC image_browser html_writer) 
 
-#install(DIRECTORY ${CMAKE_SOURCE_DIR}/api DESTINATION ${CMAKE_INSTALL_PREFIX})
-#install(TARGETS create_image_browser DESTINATION ${CMAKE_CURRENT_SOURCE_DIRECTORY})
-#install(FILES api/homework_3.h DESTINATION ../tests)
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/api DESTINATION ${CMAKE_INSTALL_PREFIX})
+install(TARGETS create_image_browser DESTINATION ${CMAKE_CURRENT_SOURCE_DIRECTORY}/tests)
+install(FILES api/homework_3.h DESTINATION ${CMAKE_CURRENT_SOURCE_DIRECTORY}/tests)
 #install(FILES api/html_writer.hpp DESTINATION ../tests)
 #install(FILES api/image_browser.hpp DESTINATION ../tests)
 #install(FILES build/create_image_browser 
