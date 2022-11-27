@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <tuple>
+
+#include "html_writer.hpp"
 // using namespace html_writer;
 
 namespace image_browser {
