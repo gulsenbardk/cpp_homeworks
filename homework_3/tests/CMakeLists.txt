@@ -1,5 +1,5 @@
 find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+include_directories(${GTEST_INCLUDE_DIRS}/api)
 set(TEST_BINARY ${PROJECT_NAME}_test)
 add_executable(${TEST_BINARY} test_image_browser.cpp test_html_writer.cpp)
 target_link_libraries(${TEST_BINARY} homework_3 GTest::Main)
