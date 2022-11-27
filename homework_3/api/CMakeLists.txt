@@ -1,5 +1,0 @@
-project(api)
-add_library(html_writer html_writer.cpp)
-add_library(create_image_browser image_browser.cpp)
-target_link_libraries(create_image_browser html_writer)
-target_include_directories(create_image_browser PUBLIC include)
