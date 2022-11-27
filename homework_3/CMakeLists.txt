@@ -1,16 +1,30 @@
 cmake_minimum_required(VERSION 3.16.3)
 project(homework_3) 
-set(CMAKE_CXX_STANDARD 17) # Use c++17.
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
-include_directories(api)
-
-add_library(homework_3 ${CMAKE_SOURCE_DIR}/src/html_writer.cpp ${CMAKE_SOURCE_DIR}/src/image_browser.cpp)
-
-
-target_include_directories(homework_3 PUBLIC ${CMAKE_SOURCE_DIR})
-
-
 enable_testing()
-add_subdirectory(${CMAKE_SOURCE_DIR}/tests)
+add_subdirectory(tests)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
+include_directories(api/)
+add_library(html_writer src/html_writer.cpp) 
+add_library(image_browser src/image_browser.cpp)   
+link_libraries( image_browser html_writer)
+add_executable(homework_3 src/main.cpp api/homework_3.h) 
+#add_library(html_writer ${CMAKE_CURRENT_SOURCE_DIR}/src/html_writer.cpp)
+#add_library(image_browser ${CMAKE_CURRENT_SOURCE_DIR}/src/image_browser.cpp)
+#target_link_libraries(image_browser html_writer) 
+#add_custom_target(homework_3 MAIN_DEPENDENCY ${CMAKE_CURRENT_SOURCE_DIR}/api/homework_3.h DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/api)
+#add_library(homework_3 INTERFACE)
+#set(header api/homework_3.h)
+#add_library(html_writer STATIC api/html_writer)
+#add_library(image_browser STATIC api/image_browser)
+#link_libraries(image_browser html writer)
+#add_library(homework_3 INTERFACE)
+#target_sources(homework_3 INTERFACE api/homework_3.h)
+#target_link_libraries(homework_3 image_browser)
+
+#install(TARGETS homework_3 ${CMAKE_CURRENT_SOURCE_DIR}/api)
+#add_custom_target(homework_3 SOURCES ${header})
+#target_link_libraries(homework_3 html_writer) 
+#target_sources(homework_3 PUBLIC api/homework_3.h)
+#install(TARGETS homework_3 DESTINATION include)
