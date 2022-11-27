@@ -3,7 +3,7 @@ project( homework_3 )
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 include_directories(api)
 
 add_library(html_writer ${CMAKE_SOURCE_DIR}/src/html_writer.cpp)
