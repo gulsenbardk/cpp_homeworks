@@ -8,6 +8,7 @@ include_directories(api)
 
 add_library(html_writer ${CMAKE_CURRENT_SOURCE_DIR}/src/html_writer.cpp)
 add_library(image_browser ${CMAKE_CURRENT_SOURCE_DIR}/src/image_browser.cpp)
-
 target_link_libraries(image_browser html_writer) 
-target_include_directories(image_browser PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/api)
+
+set(header_file "${CMAKE_CURRENT_SOURCE_DIR}/api/homework_3.h")
+add_custom_target(homework_3 ALL DEPENDS ${header_file})
