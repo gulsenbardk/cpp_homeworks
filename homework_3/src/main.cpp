@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-#include "../homework_3.h"
+#include "homework_3.h"
 
 int main() {
     const std::string title = "Image Browser";
