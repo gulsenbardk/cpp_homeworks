@@ -13,7 +13,8 @@ namespace image_browser {
 void AddFullRow(const ImageRow &row, bool first_row) {
     html_writer::OpenRow();
     bool hl = false;  // default
-    for (int i = 0; i < row.size(); i++) {
+    int row_size = row.size();
+    for (int i = 0; i <= row_size - 1; i++) {
         if (i == 0) {
             hl = first_row;
         } else {
