@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "homework_3.h"
+#include "../homework_3.h"
 
 using namespace std;
 

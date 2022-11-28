@@ -5,12 +5,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 #set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build)
 include_directories(api/)
-add_library(image_browser src/html_writer.cpp src/image_browser.cpp api/homework_3.h) 
+add_library(image_browser src/html_writer.cpp src/image_browser.cpp) 
 
 add_executable(create_image_browser src/main.cpp )#api/homework_3.h) 
 target_link_libraries(create_image_browser image_browser) 
 
 add_library(homework_3 INTERFACE)
 target_link_libraries(homework_3 INTERFACE image_browser)
-target_include_directories(homework_3 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/api)
+target_include_directories(homework_3 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/api>)
 
