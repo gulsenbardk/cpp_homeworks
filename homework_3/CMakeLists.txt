@@ -14,3 +14,6 @@ add_library(homework_3 INTERFACE)
 target_link_libraries(homework_3 INTERFACE image_browser)
 target_include_directories(homework_3 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/api>)
 
+
+enable_testing()
+add_subdirectory(tests)
