@@ -1,10 +1,6 @@
-
-// #include "image_browser.hpp"
-
 #include <iostream>
 #include <tuple>
 
-// #include "html_writer.hpp"
 #include "homework_3.h"
 //  using namespace html_writer;
 
@@ -12,14 +8,8 @@ namespace image_browser {
 
 void AddFullRow(const ImageRow &row, bool first_row) {
     html_writer::OpenRow();
-    // bool hl = false;
     int row_size = row.size();
     for (int i = 0; i <= row_size - 1; i++) {
-        // if (i == 0) {
-        //     hl = first_row;
-        // } else {
-        //     hl = false;
-        // }
         html_writer::AddImage(std::get<0>(row[i]), std::get<1>(row[i]), first_row);
     }
     html_writer::CloseRow();
@@ -32,7 +22,7 @@ void CreateImageBrowser(const std::string &title,
     html_writer::AddTitle(title);
     html_writer::AddCSSStyle(stylesheet);
     html_writer::OpenBody();
-    for (int i = 0; i < rows.size() - 1; i++) {
+    for (int i = 0; i <= rows.size() - 1; i++) {
         if (i == 0) {
             AddFullRow(rows.at(0), true);
         } else {
