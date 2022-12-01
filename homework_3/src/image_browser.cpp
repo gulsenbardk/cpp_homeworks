@@ -12,7 +12,7 @@ namespace image_browser {
 
 void AddFullRow(const ImageRow &row, bool first_row) {
     html_writer::OpenRow();
-    bool hl = false;  // default
+    bool hl = false;
     int row_size = row.size();
     for (int i = 0; i <= row_size - 1; i++) {
         if (i == 0) {
@@ -22,9 +22,8 @@ void AddFullRow(const ImageRow &row, bool first_row) {
         }
         html_writer::AddImage(std::get<0>(row[i]), std::get<1>(row[i]), hl);
     }
-    // std::get<0>(row);
     html_writer::CloseRow();
-}  // namespace image_browservoid AddFullRow(constImageRow&row,boolfirst_row)
+}  // namespace image_browser
 
 void CreateImageBrowser(const std::string &title,
                         const std::string &stylesheet,
@@ -33,8 +32,7 @@ void CreateImageBrowser(const std::string &title,
     html_writer::AddTitle(title);
     html_writer::AddCSSStyle(stylesheet);
     html_writer::OpenBody();
-    int row_size = rows.size();
-    for (int i = 0; i <= row_size - 1; i++) {
+    for (int i = 0; i < rows.size() - 1; i++) {
         if (i == 0) {
             AddFullRow(rows.at(0), true);
         } else {
@@ -46,6 +44,3 @@ void CreateImageBrowser(const std::string &title,
     html_writer::CloseDocument();
 }
 }  // namespace image_browser
-   /* using ScoredImage = std::tuple<std::string, float>;
-   using ImageRow = std::array<ScoredImage, 3>;
-   --How can i use those, are they also declarations, or other way should be use?*/
