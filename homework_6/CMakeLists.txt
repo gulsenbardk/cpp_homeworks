@@ -19,21 +19,18 @@ endif(OpenCV_FOUND)
 include_directories(include io_tools)
 
 
-#add_subdirectory(io_tools)
+add_subdirectory(io_tools)
 add_library(image src/image.cpp)
-add_library(io_tools io_tools/io_tools.cpp)
+#add_library(io_tools io_tools/io_tools.cpp)
 target_link_libraries(image io_tools)
 target_link_libraries(image ${OpenCV_LIBS})
 #target_compile_features(image PRIVATE cxx_std_17)
 #target_compile_options(image PRIVATE -Wall -Werror)
 
 
-
-add_executable(main src/main.cpp)
-target_link_libraries(main image)
 add_library(homework_6 INTERFACE)
-target_include_directories(image INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
-target_include_directories(io_tools INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_include_directories(image PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_include_directories(io_tools PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
 target_link_libraries(homework_6 INTERFACE image io_tools ${OpenCV_LIBS})
 target_include_directories(homework_6 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
