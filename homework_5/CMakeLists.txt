@@ -24,7 +24,7 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(include)
 
 
-add_library(homework_5 INTERFACE)
+
 
 add_library(mat_serialization src/serialize.cpp)
 target_link_libraries(mat_serialization ${OpenCV_LIBS})
@@ -34,16 +34,17 @@ add_library(convert_dataset src/convert_dataset.cpp)
 target_link_libraries(convert_dataset ${OpenCV_LIBS})
 target_include_directories(convert_dataset INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
-target_compile_features(convert_dataset PRIVATE cxx_std_20)
-target_compile_options(convert_dataset PRIVATE -Wall -Werror)
-target_compile_features(mat_serialization PRIVATE cxx_std_20)
-target_compile_options(mat_serialization PRIVATE -Wall -Werror)
 
-target_link_libraries(homework_5 INTERFACE mat_serialization convert_dataset)
 
+add_library(homework_5 INTERFACE)
+target_link_libraries(homework_5 INTERFACE mat_serialization convert_dataset ${OpenCV_LIBS})
+target_include_directories(homework_5 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+target_compile_features(homework_5 INTERFACE cxx_std_20)
+target_compile_options(homework_5 INTERFACE -Wall -Werror)
 
 
 add_executable(local_test src/main.cpp)
 target_link_libraries(local_test ${OpenCV_LIBS} convert_dataset mat_serialization)
+
 enable_testing()
 add_subdirectory(tests)
