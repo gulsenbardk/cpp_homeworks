@@ -22,7 +22,7 @@ void ConvertDataset(const std::filesystem::path& img_path) {
     std::filesystem::create_directory(bin);
     const string bin_path = bin.string();
 
-    for (const auto& img : std::filesystem::directory_iterator(img_path))
+    for (const auto& img : std::filesystem::directory_iterator(img_path)) {
         if (std::filesystem::path(img).extension() != ".png") {
             EXIT_FAILURE;
         } else {
@@ -43,6 +43,7 @@ void ConvertDataset(const std::filesystem::path& img_path) {
 
             ipb::serialization::Serialize(descriptors, path_filename);
         }
+    }
 }
 
 std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path) {
@@ -50,7 +51,7 @@ std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path) {
     if (!bin_path.empty()) {
         EXIT_FAILURE;
     } else {
-        for (const auto& bin : std::filesystem::directory_iterator(bin_path))
+        for (const auto& bin : std::filesystem::directory_iterator(bin_path)) {
             if (std::filesystem::path(bin).extension() != ".bin") {
                 EXIT_FAILURE;
             } else {
@@ -58,6 +59,7 @@ std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path) {
                 Mat descriptors = ipb::serialization::Deserialize(bin_file);
                 SIFT_Features.push_back(descriptors);
             }
+        }
     }
     return SIFT_Features;
 }

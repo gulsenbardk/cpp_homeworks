@@ -24,7 +24,9 @@ namespace ipb::serialization {
 
 void Serialize(const Mat& m, const string& filename) {
     ofstream fout(filename, ios::out | ios::binary);
-    int type = m.type(), rows = m.rows, cols = m.cols;
+    int type = m.type();
+    int rows = m.rows;
+    int cols = m.cols;
     auto* data = m.data;
     fout.write(reinterpret_cast<char*>(&type), sizeof(type));
     fout.write(reinterpret_cast<char*>(&rows), sizeof(rows));
