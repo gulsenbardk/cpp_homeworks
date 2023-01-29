@@ -13,10 +13,10 @@ endif(OpenCV_FOUND)
 #
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+#set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #set(CMAKE_BUILD_TYPE debug)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+#set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 #set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 #set(CMAKE_CXX_FLAGS_DEBUG "-g")
 #set(CMAKE_CXX_FLAGS_RELEASE "-O3") 
@@ -34,7 +34,13 @@ add_library(convert_dataset src/convert_dataset.cpp)
 target_link_libraries(convert_dataset ${OpenCV_LIBS})
 target_include_directories(convert_dataset INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
+target_compile_features(convert_dataset PRIVATE cxx_std_20)
+target_compile_options(convert_dataset PRIVATE -Wall -Werror)
+target_compile_features(mat_serialization PRIVATE cxx_std_20)
+target_compile_options(mat_serialization PRIVATE -Wall -Werror)
+
 target_link_libraries(homework_5 INTERFACE mat_serialization convert_dataset)
+
 
 
 add_executable(local_test src/main.cpp)
