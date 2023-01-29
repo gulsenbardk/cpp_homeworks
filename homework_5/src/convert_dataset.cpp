@@ -17,13 +17,13 @@ using namespace cv;
 using namespace std;
 
 namespace ipb::serialization::sifts {
-void ConvertDataset(const filesystem::path& img_path) {
-    const filesystem::path bin = img_path.parent_path().replace_filename("bin/");
-    filesystem::create_directory(bin);
+void ConvertDataset(const std::filesystem::path& img_path) {
+    const std::filesystem::path bin = img_path.parent_path().replace_filename("bin/");
+    std::filesystem::create_directory(bin);
     const string bin_path = bin.string();
 
-    for (const auto& img : filesystem::directory_iterator(img_path))
-        if (filesystem::path(img).extension() != ".png") {
+    for (const auto& img : std::filesystem::directory_iterator(img_path))
+        if (std::filesystem::path(img).extension() != ".png") {
             EXIT_FAILURE;
         } else {
             string image_path = img.path().string();
@@ -45,13 +45,13 @@ void ConvertDataset(const filesystem::path& img_path) {
         }
 }
 
-std::vector<cv::Mat> LoadDataset(const filesystem::path& bin_path) {
+std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path) {
     vector<cv::Mat> SIFT_Features;
     if (!bin_path.empty()) {
         EXIT_FAILURE;
     } else {
-        for (const auto& bin : filesystem::directory_iterator(bin_path))
-            if (filesystem::path(bin).extension() != ".bin") {
+        for (const auto& bin : std::filesystem::directory_iterator(bin_path))
+            if (std::filesystem::path(bin).extension() != ".bin") {
                 EXIT_FAILURE;
             } else {
                 string bin_file = bin.path().string();
