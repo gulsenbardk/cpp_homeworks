@@ -69,8 +69,8 @@ void Image::DownScale(int scale) {
         for (int witdh = 0; witdh < Col; witdh++) {
             posX = floor(witdh * scale);
             posY = floor(height * scale);
-            int suc = height * Col + witdh;
-            int pre = posY * Image::cols_ + posX;
+            double suc = height * Col + witdh;
+            double pre = posY * Image::cols_ + posX;
             imgGray.at(suc) = Image::data_.at(pre);
         }
     }
@@ -92,8 +92,8 @@ void Image::UpScale(int scale) {
         for (int witdh = 0; witdh < Col; witdh++) {
             posX = floor(witdh / scale);
             posY = floor(height / scale);
-            int suc = height * Col + witdh;
-            int pre = posY * Image::cols_ + posX;
+            double suc = height * Col + witdh;
+            double pre = posY * Image::cols_ + posX;
             imgGray.at(suc) = Image::data_.at(pre);
         }
     }
