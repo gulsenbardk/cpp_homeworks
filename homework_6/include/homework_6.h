@@ -17,8 +17,8 @@ class Image {
 
 public:
     Image() {
-        // rows_;
-        // cols_;
+        rows_ = 0;
+        cols_ = 0;
         data_.assign(rows_ * cols_, 0);
     }
     Image(int rows, int cols);
