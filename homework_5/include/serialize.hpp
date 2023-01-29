@@ -5,6 +5,7 @@
 #ifndef SERIALIZE_HPP_
 #define SERIALIZE_HPP_
 
+#include <filesystem>
 #include <opencv2/core/mat.hpp>
 #include <string>
 
