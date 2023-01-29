@@ -4,7 +4,7 @@
 #include <vector>
 
 // #include "homework_6.h"
-#include "../io_tools/io_tools.hpp"
+#include "io_tools.hpp"
 
 using namespace std;
 namespace igg {
@@ -17,8 +17,8 @@ class Image {
 
 public:
     Image() {
-        rows_ = 0;
-        cols_ = 0;
+        // rows_;
+        // cols_;
         data_.assign(rows_ * cols_, 0);
     }
     Image(int rows, int cols);
