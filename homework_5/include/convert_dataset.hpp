@@ -6,10 +6,11 @@
 #define CONVERT_DATASET_HPP_
 
 #include <filesystem>
+#include <iostream>
 #include <opencv2/core/mat.hpp>
 #include <string>
 #include <vector>
-
+using namespace std;
 namespace ipb::serialization::sifts {
 /**
  * @brief This helper function reads all the png files from a given path,
@@ -27,7 +28,7 @@ namespace ipb::serialization::sifts {
  *
  * @param img_path The path where the png image files are located.
  */
-void ConvertDataset(const std::filesystem::path& img_path);
+void ConvertDataset(const filesystem::path& img_path);
 
 /**
  * @brief This helper function will allow you to read from a binary-like dataset
@@ -39,7 +40,7 @@ void ConvertDataset(const std::filesystem::path& img_path);
  * @return std::vector<cv::Mat> Containing all the SIFT features from the input
  * binary dataset.
  */
-std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path);
+std::vector<cv::Mat> LoadDataset(const filesystem::path& bin_path);
 
 }  // namespace ipb::serialization::sifts
 
