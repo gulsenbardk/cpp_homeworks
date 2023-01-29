@@ -15,9 +15,15 @@ Image::Image(int rows, int cols) {
     cols_ = cols;
     data_.resize(rows * cols, 0);
 }
-int Image::rows() const { return Image::rows_; }
+int Image::rows() const {
+    cout << rows_ << endl;
+    return Image::rows_;
+}
 
-int Image::cols() const { return Image::cols_; }
+int Image::cols() const {
+    cout << cols_ << endl;
+    return Image::cols_;
+}
 
 int Image::at(const int& rows, const int& cols) const {
     return int(Image::data_.at(rows * Image::cols_ + cols));
