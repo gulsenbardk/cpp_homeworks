@@ -1,4 +1,3 @@
-#include <stdio.h>
 
 #include <bitset>
 #include <boost/archive/binary_iarchive.hpp>  //?
@@ -36,7 +35,9 @@ void Serialize(const Mat& m, const string& filename) {
 }
 
 cv::Mat Deserialize(const std::string& filename) {
-    int type = 0, rows = 0, cols = 0;
+    int type = 0;
+    int rows = 0;
+    int cols = 0;
     uchar* data = nullptr;
     ifstream fin(filename, iostream::binary);
     if (!fin) {
