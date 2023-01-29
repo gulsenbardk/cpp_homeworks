@@ -32,10 +32,12 @@ add_library(homework_6 INTERFACE)
 target_include_directories(image PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 target_include_directories(io_tools PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
+
 target_link_libraries(homework_6 INTERFACE image io_tools ${OpenCV_LIBS})
 target_include_directories(homework_6 INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 target_compile_features(homework_6 INTERFACE cxx_std_20)
 target_compile_options(homework_6 INTERFACE -Wall -Werror) 
+
 
 enable_testing()
 add_subdirectory(tests)
