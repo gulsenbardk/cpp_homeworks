@@ -10,7 +10,7 @@ struct named_vector {
     std::vector<T> Vector;
 
     auto name() { return nameV; }
-    auto vector() { Vector; }
+    auto vector() { return Vector; }
     auto size() { return nameV.size() + Vector.size(); }
     auto capacity() { return Vector.capacity(); }
     auto resize(int len) { return Vector.resize(len); }

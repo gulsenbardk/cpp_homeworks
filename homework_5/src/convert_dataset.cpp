@@ -17,7 +17,7 @@ using namespace cv;
 using namespace std;
 
 namespace ipb::serialization::sifts {
-void ConvertDataset(const std::filesystem::path& img_path) {
+void ConvertDataset(const filesystem::path& img_path) {
     const filesystem::path bin = img_path.parent_path().replace_filename("bin/");
     filesystem::create_directory(bin);
     const string bin_path = bin.string();
@@ -45,7 +45,7 @@ void ConvertDataset(const std::filesystem::path& img_path) {
         }
 }
 
-std::vector<cv::Mat> LoadDataset(const std::filesystem::path& bin_path) {
+std::vector<cv::Mat> LoadDataset(const filesystem::path& bin_path) {
     vector<cv::Mat> SIFT_Features;
     if (!bin_path.empty()) {
         EXIT_FAILURE;
