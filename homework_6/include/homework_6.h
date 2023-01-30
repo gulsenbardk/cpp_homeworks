@@ -22,9 +22,8 @@ public:
     //     data_.assign(rows_ * cols_, 0);
     // }
     Image() {
-        rows_ = 0;
-        cols_ = 0;
-        max_val = 0;
+        int rows_ = 0;
+        int cols_ = 0;
         data_.assign(rows_ * cols_, 0);
     }
     Image(int rows, int cols);
