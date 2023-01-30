@@ -14,10 +14,10 @@ namespace igg::io_tools {
 
 /// Dummy structure to store relevant image data.
 struct ImageData {
-    int rows;
-    int cols;
-    uint8_t max_val;
-    std::vector<uint8_t> data;
+    int rows{};
+    int cols{};
+    uint8_t max_val{};
+    std::vector<uint8_t> data{};
 };
 
 /// Reads from a pgm image from ascii file. Returns empty ImageData if the path

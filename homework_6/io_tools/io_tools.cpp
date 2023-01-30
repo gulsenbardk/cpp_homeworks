@@ -5,6 +5,8 @@
 // Copyright (c) 2019 Igor Bogoslavskyi , all rights reserved
 #include "io_tools.hpp"
 
+#include <cstddef>
+#include <cstdint>
 #include <fstream>
 #include <ios>
 #include <iostream>
@@ -13,44 +15,44 @@
 namespace igg::io_tools {
 
 ImageData ReadFromPgm(const std::string& file_name) {
-    std::ifstream in(file_name, std::ios_base::in);
-    if (!in) {
+    std::ifstream pgm_file(file_name, std::ios_base::in);
+    if (!pgm_file) {
         return {0, 0, 0, {}};
     }
 
-    // Read integers, if we read chars, we get 1 digit instead of the whole number
+    // Read integers, if we read chars, we get 1 digit instead of the whole
+    // number
     std::string type;
     int rows = 0;
     int cols = 0;
     int max_val = 0;
     std::vector<uint8_t> data;
-    in >> type >> rows >> cols >> max_val;
+    pgm_file >> type >> rows >> cols >> max_val;
 
-    data.resize(rows * cols);
+    data.resize(static_cast<int>(rows * cols));
     int byte = 0;
-    for (int r = 0; r < rows; ++r) {
-        for (int c = 0; c < cols; ++c) {
-            in >> byte;
-            data[r * cols + c] = byte;
+    for (int row = 0; row < rows; ++row) {
+        for (int col = 0; col < cols; ++col) {
+            pgm_file >> byte;
+            data[row * cols + col] = byte;
         }
     }
     return {rows, cols, static_cast<uint8_t>(max_val), data};
 }
 
 bool WriteToPgm(const ImageData& image_data, const std::string& file_name) {
-    std::ofstream out(file_name);
-    if (!out) {
+    std::ofstream pgm_file(file_name);
+    if (!pgm_file) {
         return false;
     }
-
-    out << "P2" << std::endl
-        << image_data.rows << " " << image_data.cols << std::endl
-        << image_data.max_val << std::endl;
-    for (int r = 0; r < image_data.rows; ++r) {
-        for (int c = 0; c < image_data.cols; ++c) {
-            out << image_data.data[r * image_data.cols + c] << " ";
+    pgm_file << "P2" << std::endl
+             << image_data.rows << " " << image_data.cols << std::endl
+             << image_data.max_val << std::endl;
+    for (int row = 0; row < image_data.rows; ++row) {
+        for (int col = 0; col < image_data.cols; ++col) {
+            pgm_file << image_data.data[row * image_data.cols + col] << " ";
         }
-        out << std::endl;
+        pgm_file << std::endl;
     }
     return true;
 }
