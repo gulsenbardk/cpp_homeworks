@@ -1,21 +1,26 @@
-#pragma once
 #include <algorithm>
 #include <iostream>
+#include <utility>
 #include <vector>
 
-namespace ipb {
-template <typename T>
-struct named_vector {
-    std::string nameV;
-    std::vector<T> Vector;
+#include "homework_4.h"
 
+namespace ipb {
+
+template <typename T>
+
+struct named_vector {
+public:
+    std::string nameV;
+    std::vector<T> vec;
+    named_vector<T>(std::string name, std::vector<T> vec2) : nameV(std::move(name)), vec(vec2) {}
     auto name() { return nameV; }
-    auto vector() { return Vector; }
-    auto size() { return nameV.size() + Vector.size(); }
-    auto capacity() { return Vector.capacity(); }
-    auto resize(int len) { return Vector.resize(len); }
-    auto reserve(int n) { return Vector.reserve(n); }
-    auto empty() { return (nameV.empty() || Vector.empty()) ? 1 : 0; }
+    auto vector() { return vec; }
+    auto size() { return nameV.size() + vec.size(); }
+    auto capacity() { return vec.capacity(); }
+    auto resize(int len) { return vec.resize(len); }
+    auto reserve(int n) { return vec.reserve(n); }
+    auto empty() { return (nameV.empty() || vec.empty()) ? 1 : 0; }
 };
 
 }  // namespace ipb
