@@ -6,34 +6,75 @@
 #include "homework_4.h"
 
 using namespace ipb;
-template <typename T>
 
-auto accumulate(named_vector<T> vec) {
-    auto v = vec.vector();
-    auto accumulated = std::accumulate(v.begin(), v.end(), 0);
+int accumulate(named_vector<int> vector) {
+    std::vector<int> v = vector.vector();
+    int accumulated = std::accumulate(v.begin(), v.end(), 0);
     return accumulated;
 }
 
-template <typename T>
-auto count(named_vector<T> vec) {
-    auto V = vec.vector();
-    return (std::count(V.begin(), V.end(), 0));
+int count(named_vector<int> vector, int number) {
+    std::vector<int> V = vector.vector();
+    int counted = std::count(V.begin(), V.end(), number);
+    return (counted);
 }
-template <typename T>
-auto all_even(named_vector<T> vec) {
-    auto V = vec.vector();
+
+bool all_even(named_vector<int> vector) {
+    std::vector<int> V = vector.vector();
+    bool evened = std::all_of(V.cbegin(), V.cend(), [](int i) { return i % 2 == 0; });
+    return (evened);
 }
-template <typename T>
-auto clamp(named_vector<T> vec, T min, T max) {
-    std::vector<T> clamped;
-    for (const auto& d : vec.vector()) {
+
+named_vector<int> clamp(named_vector<int> vector, int min, int max) {
+    std::vector<int> clamped;
+    for (const auto& d : vector.vector()) {
         clamped.push_back(std::clamp(d, min, max));
     }
-    return vec = {vec.name(), clamped};
+    return vector = {vector.name(), clamped};
 }
-template <typename T>
-auto fill(named_vector<T> vec, T number) {
-    auto filled = vec.vector();
-    std::fill(filled.begin(), filled.end(), number);
-    return vec = {vec.name(), filled};
+
+named_vector<int> fill(named_vector<int>& vector, int number) {
+    // std::vector<int> filled = vector.vector();
+    std::fill(vector.vector().begin(), vector.vector().end(), number);
+    return vector;
+}
+
+bool find(named_vector<int> vector, int number) {
+    std::vector<int> V = vector.vector();
+    std::vector<int>::iterator it;
+    it = std::find(V.begin(), V.end(), number);
+    bool con = it != V.end();
+    return con;
+}
+
+void print(named_vector<int> vector) {
+    std::vector<int> V = vector.vector();
+    std::string name = vector.name();
+    std::cout << name << ", ";
+    std::cout << "{ ";
+    for (int i : V) {
+        std::cout << i << ", ";
+    }
+    std::cout << " }";
+}  // TODO test
+
+named_vector<int> toupper(named_vector<int>& vector) {
+    std::transform(vector.vector().begin(), vector.vector().end(), vector.vector().begin(),
+                   [](char c) { return std::toupper(c); });
+    return vector;
+}
+
+named_vector<int> sort(named_vector<int>& vector) {
+    std::sort(vector.vector().begin(), vector.vector().end());
+    return vector;
+}
+
+named_vector<int> rotate(named_vector<int>& vector, int pos) {
+    std::rotate(vector.vector().begin(), vector.vector().begin() + pos, vector.vector().end());
+    return vector;
+}
+
+named_vector<int> reverse(named_vector<int>& vector) {
+    std::reverse(vector.vector().begin(), vector.vector().end());
+    return vector;
 }
