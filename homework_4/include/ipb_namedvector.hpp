@@ -1,11 +1,9 @@
+#pragma once
 #include <algorithm>
 #include <iostream>
 #include <utility>
 #include <vector>
 
-#include "homework_4.h"
-#ifndef IPB_NAMEDVECTOR_HPP
-#define IPB_NAMEDVECTOR_HPP
 namespace ipb {
 
 template <typename T>
@@ -26,5 +24,3 @@ struct named_vector {
 };
 
 }  // namespace ipb
-
-#endif

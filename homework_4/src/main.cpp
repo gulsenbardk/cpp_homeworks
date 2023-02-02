@@ -6,10 +6,15 @@
 using vector = ipb::named_vector<int>;
 
 int main() {
-    vector v{"vectorname", {1, 2, 3, 4, 5}};
-    std::cout << v.name();
-    std::cout << v.capacity();
-    std::cout << v.empty();
-
-    // std::cout << ipb::accumulate(v);
+    vector v2{"name", {1, 2, 3, 4}};
+    vector v{"vectorname", {12, 4, 0, 1}};
+    // std::cout << v.name();
+    // std::cout << v.capacity();
+    // std::cout << v.empty();
+    ipb::clamp(v2, 2, 3);
+    ipb::fill(v2, -100);
+    ipb::toupper(v2);
+    ipb::sort(v);
+    ipb::rotate(v2, 2);
+    ipb::reverse(v);
 }
