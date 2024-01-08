@@ -11,25 +11,12 @@ public:
     }
 
 private:
-    BowDictionary() {}  // constructor
-    // BowDictionary(BowDictionary const&);
-    // void operator=(BowDictionary const&);
+    BowDictionary() = default;  // constructor
 
 public:
     BowDictionary(BowDictionary const&) = delete;
     void operator=(BowDictionary const&) = delete;
-    // protected:
-    //     BowDictionary(BowDictionary const &instance) : instance_(instance) {}
-    //     //~BowDictionary();
-    //     static BowDictionary *bow_;
-    //     BowDictionary const &instance_;
-    //
-    // public:
-    //     BowDictionary(BowDictionary &) = delete; // not cloneable
-    //     void operator=(const BowDictionary &) = delete; //not assignable
-    //     static BowDictionary *GetInstance(BowDictionary const &instance);
 
-public:
     int max_iter_num = 0;
     int size_num = 0;
     std::vector<cv::Mat> in_descriptors;
