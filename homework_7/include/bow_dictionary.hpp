@@ -12,6 +12,7 @@ public:
 
 private:
     BowDictionary() = default;  // constructor
+    ~BowDictionary() = default;
 
 public:
     BowDictionary(BowDictionary const&) = delete;

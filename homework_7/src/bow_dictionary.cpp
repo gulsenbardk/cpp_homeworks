@@ -5,8 +5,6 @@
 
 using namespace cv;
 using namespace std;
-using ipb::serialization::sifts::ConvertDataset;
-using ipb::serialization::sifts::LoadDataset;
 
 namespace ipb {
 // BowDictionary *BowDictionary::bow_ = nullptr;
