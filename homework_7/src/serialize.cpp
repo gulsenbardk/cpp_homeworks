@@ -49,8 +49,8 @@ cv::Mat Deserialize(const std::string& filename) {
     Mat M(rows, cols, type);  //,data);
     uchar* data = M.data;
 
-    for (size_t i = 0; i < rows * cols; i++) {
-        fin.read(reinterpret_cast<char*>(&data[i]), sizeof(data[i])); //hw_5>fix 
+    for (int i = 0; i < rows * cols; i++) {
+        fin.read(reinterpret_cast<char*>(&data[i]), sizeof(data[i]));  // hw_5>fix
     }
     // fin.read(reinterpret_cast<char*>(&data), sizeof(data)); ->data allocate
 
