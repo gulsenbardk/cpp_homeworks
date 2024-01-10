@@ -28,9 +28,9 @@ public:
 
     ///////////////////////////////////////////////////
 
-    int max_iterations();
-    int size();  // number of centroids / codewords
-    vector<Mat> descriptors();
+    int max_iterations() const;
+    int size() const;  // number of centroids / codewords
+    vector<Mat> descriptors() const;
     int total_features();  // number of input features
 
     ///////////////////////////////////////////////////

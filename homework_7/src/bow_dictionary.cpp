@@ -15,11 +15,11 @@ namespace ipb {
 //     return bow_;
 // }
 ///////////////////////////////////////////////////////////////////////////////////
-int BowDictionary::max_iterations() { return max_iter_num; }
+int BowDictionary::max_iterations() const { return max_iter_num; }
 
-int BowDictionary::size() { return size_num; }
+int BowDictionary::size() const { return size_num; }
 
-std::vector<cv::Mat> BowDictionary::descriptors() { return in_descriptors; }
+std::vector<cv::Mat> BowDictionary::descriptors() const { return in_descriptors; }
 ///////////////////////////////////////////////////////////////////////////////////
 int BowDictionary::total_features() {
     int total_features = 0;
