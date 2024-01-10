@@ -18,6 +18,9 @@ public:
     BowDictionary(BowDictionary const&) = delete;
     void operator=(BowDictionary const&) = delete;
 
+    BowDictionary(BowDictionary&&) noexcept = default;
+    BowDictionary& operator=(BowDictionary&&) noexcept = default;
+
     int max_iter_num = 0;
     int size_num = 0;
     std::vector<cv::Mat> in_descriptors;
