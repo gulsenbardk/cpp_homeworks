@@ -1,13 +1,2 @@
-# Homework folders for C++ courses
-
-This is a dummy repository with the structure for the homeworks.
-
-Your task is to fill the appropriate homeworks with your solutions to the given
-homework sheets.
-
-## Structure is important
-
-We will only be able to test the homework if the structure of the project is
-going to be **exactly** correct. Every homework will define a structure of the
-folders that you will need to follow. If the structure is unclear to you, ask
-you tutor for help.
+## Description 
+This homeworks has been done for the Modern C++ Course for Computer Vision in the Geodetic Engineering Master Program, Mobile Sensing, and Robotics Specialization at the University of Bonn in 2024. Homework materials can be found on the  [course webpage](https://www.ipb.uni-bonn.de/teaching/cpp-2020/homeworks/index.html). Course videos that are taught by Ignacio Vizzo and Prof. Cyrill Stachniss can be found in the Prof. Cyrill Stachniss [Youtube playlist](https://www.youtube.com/watch?v=sZK6ouwREXA&list=PLgnQpQtFTOGRM59sr3nSL8BmeMZR9GCIA&index=1).
